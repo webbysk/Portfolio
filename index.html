@@ -9,75 +9,412 @@
 </head>
 
 <body>
+ <!-- =====================
+            NAVBAR
+    ====================== -->
+
     <nav>
+
+        <a href="index.html" class="logo">
+            Saiem<span>.</span>
+        </a>
+
         <ul class="nav-ul">
-            <li class="nav-li">Home</li>
- 
-            <li class="nav-li">Services</li>
-            <li class="nav-li">Contact Me</li>
+
+            <li><a href="index.html#hero" class="nav-link active">Home</a></li>
+
+            <li><a href="index.html#technologies" class="nav-link">Technologies</a></li>
+
+            <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+
         </ul>
 
-        <a href="https://www.github.com/webbysk" class="btn">View Projects</a>
+        <a href="index.html#projects" class="btn">
+            View Projects
+        </a>
+
     </nav>
 
-    <div class="abt-me">
-            <img src="./images/pfp.png" alt="">
-          <div class="first-heading">
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-greeting">👋 Hello, I'm</p>
 
             <h1>Saiem Ahmed Khan</h1>
+
             <h2>Front-End Developer</h2>
+
+            <p class="hero-description">
+                I build modern, responsive, and user-friendly websites using
+                HTML, CSS, Flexbox, and Grid. Currently learning JavaScript
+                to create fast, interactive web experiences.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="primary-btn">
+                    View Projects
+                </a>
+
+                <a href="contact.html" class="secondary-btn">
+                    Contact Me
+                </a>
+
             </div>
 
-            <p class="description">Passionate about building modern, responsive, and user-friendly websites that combine clean design with seamless functionality. I enjoy turning ideas into engaging digital experiences through efficient code, intuitive interfaces, and attention to detail. Every project is an opportunity to create something meaningful while continuously learning and improving as a developer.</p>
+            <div class="socials">
+
+                <a href="https://github.com/webbysk" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:webdevelopersk@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="technologies" id="technologies">
+
+        <div class="section-title">
+            <h2>Technologies I Use</h2>
+            <p>
+                Tools and technologies I'm currently using to build modern,
+                responsive and accessible web applications.
+            </p>
+        </div>
+
+        <div class="tech-grid">
+
+            <div class="tech-card">
+
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+
+                <h3>HTML5</h3>
+                <p>
+                    Semantic markup, accessibility,
+                    forms and SEO-friendly structure.
+                </p>
+            </div>
+
+            <div class="tech-card">
+
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+
+                <h3>CSS3</h3>
+                <p>
+                    Flexbox, Grid, animations,
+                    responsive layouts and modern UI.
+                </p>
+            </div>
+
+            <div class="tech-card">
+
+                <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+
+                <h3>JavaScript</h3>
+                <p>
+                    Currently learning JavaScript
+                    to build dynamic web applications.
+                </p>
+            </div>
+
+            <div class="tech-card">
+
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+
+                <h3>Python</h3>
+                <p>
+                    Learning Python fundamentals
+                    and problem solving.
+                </p>
+            </div>
+
+            <div class="tech-card">
+
+               <svg class="icon" xmlns="http://w3.org" width="80" height="80" viewBox="0 0 24 24" fill="#000000" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+  </svg>
+
+
+
+                <h3>Git</h3>
+                <p>
+                    Version control using Git
+                    and GitHub.
+                </p>
+            </div>
+
+
+        </div>
+
+    </section>
+    </section>
+
+    <section class="projects" id="projects">
+
+    <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>
+            Here are some of my favorite projects that showcase my
+            front-end development skills and passion for building
+            modern, responsive web experiences.
+        </p>
     </div>
-<section class="expertise">
-    <h2>My Expertise</h2>
 
-    <div class="skills">
+    <div class="project-grid">
 
-        <div class="skill">
-            <h3>HTML5</h3>
+        <!-- Project 1 -->
 
-            <div class="progress">
-                <div class="fill html"></div>
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img src="./images/Screenshot 2026-07-24 094559.png" alt="Portfolio Website">
+
             </div>
 
-            <span>100%</span>
-        </div>
+            <div class="project-content">
 
-        <div class="skill">
-            <h3>CSS3</h3>
+                <h3>Developer Portfolio</h3>
 
-            <div class="progress">
-                <div class="fill css"></div>
+                <p>
+                    A modern personal portfolio built with HTML, CSS,
+                    Flexbox and Grid featuring responsive layouts,
+                    hover animations and a sleek dark theme.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Flexbox</span>
+                    <span>Grid</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="live-btn">
+                        This Page
+                    </a>
+
+                    <a   href="https://github.com/webbysk/Portfolio"
+                        target="_blank"
+                        class="github-btn">
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
             </div>
 
-            <span>80%</span>
         </div>
 
-        <div class="skill">
-            <h3>JavaScript</h3>
+        <!-- Project 2 -->
 
-            <div class="progress">
-                <div class="fill js"></div>
+        <div class="project-card">
+
+            <div class="project-image">
+
+                <img src="./images/Screenshot 2026-07-24 094455.png" alt="Landing Page">
+
             </div>
 
-            <span>0%</span>
-        </div>
+            <div class="project-content">
 
-        <div class="skill">
-            <h3>Python</h3>
+                <h3>Restaurant Landing Page</h3>
 
-            <div class="progress">
-                <div class="fill python"></div>
+                <p>
+                    A responsive landing page designed with modern
+                    UI principles, smooth spacing and mobile-first
+                    layout.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Responsive</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a target="_blank" rel="noopener noreferrer" href="./Restaurant Landing Page/index.html" class="live-btn">
+                        Live Demo
+                    </a>
+
+                    <a href="#" class="github-btn">
+                        GitHub
+                    </a>
+
+                </div>
+
             </div>
 
-            <span>0%</span>
         </div>
 
-    </div>
+        <!-- Project 3 -->
+
+        <!-- <div class="project-card">
+
+            <div class="project-image">
+
+                <img src="./images/Adobe Express - file.png" alt="Dashboard">
+
+            </div>
+
+            <div class="project-content">
+
+                <h3>Admin Dashboard</h3>
+
+                <p>
+                    Dashboard interface designed using CSS Grid,
+                    Flexbox and reusable card layouts.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Grid</span>
+
+                    <span>Flexbox</span>
+
+                    <span>UI</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="live-btn">
+                        Live Demo
+                    </a>
+
+                    <a href="#" class="github-btn">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+        <!-- Project 4 -->
+
+        <!-- <div class="project-card">
+
+            <div class="project-image">
+
+                <img src="./images/Adobe Express - file.png" alt="Coming Soon">
+
+            </div>
+
+            <div class="project-content">
+
+                <h3>Weather App</h3>
+
+                <p>
+                    Currently building this project while learning
+                    JavaScript. Stay tuned for updates.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>JavaScript</span>
+
+                    <span>API</span>
+
+                    <span>Learning</span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="live-btn">
+                        Preview
+                    </a>
+
+                    <a href="#" class="github-btn">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> -->
+
 </section>
 
+<footer>
+
+    <div class="footer-content">
+
+        <h2 class="footer-logo">
+            Saiem<span>.</span>
+        </h2>
+
+        <p class="footer-text">
+
+            Thanks for visiting my portfolio.
+            I'm always open to learning, collaborating,
+            and building exciting projects.
+
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#hero">Home</a>
+
+            <a href="#technologies">Technologies</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div class="footer-socials">
+
+            <a href="https://github.com/webbysk" target="_blank">
+                GitHub
+            </a>
+
+            <a href="mailto:webdevelopersaiemk@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+        <hr>
+
+        <p class="copyright">
+
+            © 2026 Saiem Ahmed Khan. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
 </body>
 
 </html>

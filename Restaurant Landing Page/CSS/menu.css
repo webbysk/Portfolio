@@ -1,0 +1,746 @@
+/* =======================================================
+                    GOOGLE FONT & RESET
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#fafafa;
+    color:#2c3e50;
+}
+
+
+/* =======================================================
+                        NAVBAR
+======================================================= */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:white;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+}
+
+.logo{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#243b53;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#2c3e50;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:100%;
+
+    height:2px;
+
+    background:orangered;
+
+    transform:scaleX(0);
+
+    transform-origin:center;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:orangered;
+}
+
+.nav-links a:hover::after{
+
+    transform:scaleX(1);
+}
+
+
+/* =======================================================
+                        HERO
+======================================================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:80px 20px 50px;
+}
+
+.hero h1{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+    color:#243b53;
+}
+
+.hero p{
+
+    width:700px;
+
+    max-width:90%;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#666;
+}
+
+
+/* =======================================================
+                    PRODUCTS SECTION
+======================================================= */
+
+.products{
+
+    width:1200px;
+
+    max-width:90%;
+
+    margin:60px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+}
+
+
+/* =======================================================
+                        FOOTER
+======================================================= */
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    margin-top:80px;
+}
+
+footer h2{
+
+    margin-bottom:15px;
+
+    font-size:32px;
+}
+
+footer p{
+
+    color:#cfcfcf;
+
+    margin:10px 0;
+}
+
+/* =======================================================
+                    PRODUCT CARD
+======================================================= */
+
+.product{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.product:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+
+/* =======================================================
+                    PRODUCT IMAGE
+======================================================= */
+
+.product img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.35s;
+}
+
+.product:hover img{
+
+    transform:scale(1.05);
+}
+
+
+/* =======================================================
+                    CONTENT
+======================================================= */
+
+.content{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+}
+
+.content h2{
+
+    font-size:26px;
+
+    margin-bottom:12px;
+
+    color:#243b53;
+}
+
+.content p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    margin-bottom:25px;
+}
+
+
+/* =======================================================
+                    PRICE & BUTTON
+======================================================= */
+
+.bottom{
+
+    margin-top:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.price{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:orangered;
+}
+
+
+/* =======================================================
+                    ORDER BUTTON
+======================================================= */
+
+.bottom button{
+
+    border:none;
+
+    outline:none;
+
+    background:orangered;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.bottom button:hover{
+
+    background:#d84200;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(255,69,0,.35);
+}
+
+.bottom button:active{
+
+    transform:scale(.96);
+}
+
+
+/* =======================================================
+                    OPTIONAL BADGE
+======================================================= */
+
+.badge{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:orangered;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+
+/* =======================================================
+                    SMOOTH TRANSITIONS
+======================================================= */
+
+button,
+.product,
+.product img,
+.nav-links a{
+
+    transition:.35s;
+}
+
+/* =======================================================
+                    TABLET (992px)
+======================================================= */
+
+@media (max-width:992px){
+
+    .navbar{
+
+        padding:18px 5%;
+    }
+
+    .logo{
+
+        font-size:28px;
+    }
+
+    .nav-links{
+
+        gap:25px;
+    }
+
+    .hero{
+
+        padding:60px 20px 40px;
+    }
+
+    .hero h1{
+
+        font-size:44px;
+    }
+
+    .hero p{
+
+        font-size:17px;
+    }
+
+    .products{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:30px;
+    }
+
+}
+
+
+/* =======================================================
+                    MOBILE (768px)
+======================================================= */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        padding:20px;
+    }
+
+    .logo{
+
+        font-size:30px;
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:20px;
+    }
+
+    .hero{
+
+        padding:50px 20px 30px;
+    }
+
+    .hero h1{
+
+        font-size:38px;
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+        line-height:1.7;
+    }
+
+    .products{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .content h2{
+
+        font-size:24px;
+    }
+
+    .price{
+
+        font-size:24px;
+    }
+
+    .bottom{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        align-items:flex-start;
+    }
+
+    .bottom button{
+
+        width:100%;
+    }
+
+}
+
+
+/* =======================================================
+                    SMALL MOBILE (480px)
+======================================================= */
+
+@media (max-width:480px){
+
+    .logo{
+
+        font-size:26px;
+    }
+
+    .hero h1{
+
+        font-size:30px;
+    }
+
+    .hero p{
+
+        font-size:15px;
+    }
+
+    .content{
+
+        padding:20px;
+    }
+
+    .content h2{
+
+        font-size:22px;
+    }
+
+    .content p{
+
+        font-size:14px;
+    }
+
+    .price{
+
+        font-size:22px;
+    }
+
+    .bottom button{
+
+        padding:12px 18px;
+
+        font-size:14px;
+    }
+
+    footer{
+
+        padding:40px 15px;
+    }
+
+    footer h2{
+
+        font-size:26px;
+    }
+
+}
+
+
+/* =======================================================
+                    SMOOTH SCROLL
+======================================================= */
+
+html{
+
+    scroll-behavior:smooth;
+}
+
+/* =======================================================
+                        FOOTER
+======================================================= */
+
+.footer{
+
+    background:#1c1c1c;
+
+    color:white;
+
+    padding:80px 8% 30px;
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:50px;
+}
+
+.footer-box h2{
+
+    font-size:34px;
+
+    margin-bottom:20px;
+}
+
+.footer-box h3{
+
+    font-size:24px;
+
+    color:orangered;
+
+    margin-bottom:20px;
+}
+
+.footer-box p{
+
+    color:#d4d4d4;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+.footer-box span{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:16px;
+
+    font-weight:500;
+}
+
+.footer-box a{
+
+    display:block;
+
+    color:#d4d4d4;
+
+    text-decoration:none;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+}
+
+.footer-box a:hover{
+
+    color:orangered;
+
+    transform:translateX(6px);
+}
+
+
+/* =======================================================
+                    SOCIAL ICONS
+======================================================= */
+
+.social-icons{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-top:25px;
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#2b2b2b;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    transition:.35s;
+}
+
+.social-icons a:hover{
+
+    background:orangered;
+
+    transform:translateY(-5px);
+}
+
+
+/* =======================================================
+                    FOOTER BOTTOM
+======================================================= */
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:50px;
+
+    padding-top:25px;
+
+    text-align:center;
+}
+
+.footer-bottom p{
+
+    color:#bfbfbf;
+
+    font-size:15px;
+}
+
+
+/* =======================================================
+                    RESPONSIVE
+======================================================= */
+
+@media(max-width:768px){
+
+    .footer{
+
+        padding:60px 8% 25px;
+    }
+
+    .footer-box{
+
+        text-align:center;
+    }
+
+    .social-icons{
+
+        justify-content:center;
+    }
+
+}

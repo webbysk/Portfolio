@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fafafa;
+    color: #2c3e50;
+}
+
+/* =======================================================
+                        NAVBAR
+======================================================= */
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background: white;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .05);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #243b53;
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 40px;
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #2c3e50;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: .3s;
+}
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: orangered;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+
+    color: orangered;
+}
+
+.nav-links a:hover::after {
+
+    transform: scaleX(1);
+}
+
+
+/* --- Advanced Grid Hero Section Layout --- */
+.hero {
+    max-width: 1200px;
+    /* Expands width to handle text + image gracefully */
+    margin: 60px auto;
+    /* Centers the whole block horizontally on the page */
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Splitting the area into two equal columns */
+    gap: 40px;
+    align-items: center;
+}
+
+/* Container hosting your heading, description, and button */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Aligns content cleanly to the left */
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    color: #1a252f;
+    /* Darker variant for striking typography layout */
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    color: #5a6c7d;
+    /* Softened secondary text color */
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    /* Changed from 450px to auto so the plate doesn't distort */
+    max-height: 480px;
+    /* Prevents it from getting too massive */
+    object-fit: contain;
+    /* Changed from cover to contain so NO part of the plate is cropped */
+    border-radius: 24px;
+
+    /* Creates a subtle warm card background to outline the white image edges */
+    background: radial-gradient(circle, #ffffff 60%, #f9f6f0 100%);
+    padding: 20px;
+    /* Gives breathing room around the plate edges */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+
+/* --- Call To Action (CTA) Button --- */
+.cta-btn {
+    border: none;
+    background-color: orangered;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    will-change: transform;
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background-color 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e04400;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3);
+}
+
+.cta-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 5px 10px rgba(255, 69, 0, 0.2);
+}
+
+/* --- Mobile Responsiveness (Ensures layouts look clean on phones) --- */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        /* Drops into a single column layout on small screens */
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+        /* Centers elements when stacked vertically */
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero img {
+        height: 300px;
+
+        order: -1;
+        /* Pushes image above the text on mobile screens for visual priority */
+    }
+}
+
+/* =======================================================
+                    POPULAR DISHES
+======================================================= */
+
+.popular{
+
+    width:1200px;
+
+    max-width:90%;
+
+    margin:100px auto;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-title h2{
+
+    font-size:45px;
+
+    color:#243b53;
+
+    margin-bottom:15px;
+}
+
+.section-title p{
+
+    color:#666;
+
+    font-size:18px;
+}
+
+.popular-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+}
+
+.dish{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.dish:hover{
+
+    transform:translateY(-10px);
+}
+
+.dish img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+}
+
+.dish h3{
+
+    margin:20px;
+
+    font-size:24px;
+}
+
+.dish p{
+
+    margin:0 20px;
+
+    color:#666;
+
+    line-height:1.7;
+}
+
+.dish span{
+
+    display:block;
+
+    margin:20px;
+
+    color:orangered;
+
+    font-size:26px;
+
+    font-weight:bold;
+}
+
+/* =======================================================
+                    TESTIMONIALS
+======================================================= */
+
+.testimonials{
+
+    background:#fff7f2;
+
+    padding:100px 8%;
+}
+
+.testimonial-grid{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+}
+
+.testimonial-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.testimonial-card img{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+    border:4px solid orangered;
+}
+
+.testimonial-card h3{
+
+    font-size:24px;
+
+    color:#243b53;
+
+    margin-bottom:8px;
+}
+
+.testimonial-card span{
+
+    display:block;
+
+    color:#ffb400;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+}
+
+.testimonial-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+/* =======================================================
+                        FOOTER
+======================================================= */
+
+.footer{
+
+    background:#1d1d1d;
+
+    color:white;
+
+    margin-top:100px;
+
+    padding:70px 8% 25px;
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:50px;
+}
+
+.footer-box h2{
+
+    font-size:34px;
+
+    margin-bottom:20px;
+}
+
+.footer-box h3{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+    color:orangered;
+}
+
+.footer-box p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+.footer-box span{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:18px;
+
+    font-weight:500;
+}
+
+.footer-box a{
+
+    display:block;
+
+    color:#cfcfcf;
+
+    text-decoration:none;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+}
+
+.footer-box a:hover{
+
+    color:orangered;
+
+    transform:translateX(6px);
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    margin-top:50px;
+
+    padding-top:25px;
+}
+
+.footer-bottom p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+}
