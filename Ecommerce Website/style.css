@@ -1,0 +1,1009 @@
+/* =========================================================
+   TABLE OF CONTENTS
+   1. Global Reset & Base
+   2. Utilities
+   3. Navbar
+   4. Search Bar
+   5. Auth Buttons
+   6. Hero Section
+   7. Categories Section
+   8. Featured Products / Product Cards
+   9. Flash Sale Section
+   10. Why Choose / Specialities
+   11. Customer Reviews / Testimonials
+   12. Newsletter
+   13. Back To Top Button
+   14. Footer
+   15. Responsive Design (1200px -> 576px)
+   ========================================================= */
+/* =========================================================
+   1. GLOBAL RESET
+========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.page {
+    width: 100%;
+}
+
+/* =========================================================
+   2. UTILITIES
+========================================================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =========================================================
+   3. NAVBAR
+========================================================= */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 8%;
+    background: #0b0b0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 8px 0;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff7a00;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================================================
+   4. SEARCH BAR
+========================================================= */
+.search form {
+    display: flex;
+    width: 280px;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #161616;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search input::placeholder {
+    color: #888;
+}
+
+.search input:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.25);
+}
+
+/* =========================================================
+   5. AUTH BUTTONS
+========================================================= */
+.register-btn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.register-btn a {
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-login {
+    color: #aaaaaa;
+}
+
+.btn-login:hover {
+    color: white;
+}
+
+.btn-signup {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn-signup:hover {
+    background: #ff7a00;
+    color: white;
+}
+
+/* =========================================================
+   6. HERO SECTION
+   ========================================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #ff7a00;
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff8f1f;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   7. CATEGORIES SECTION
+   ========================================================= */
+.categories {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.categories h1 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+}
+
+.ctg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.category {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.category img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.category::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.category h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #ff7a00;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.category:hover img {
+    transform: scale(1.08);
+}
+
+.category:hover::after {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   8. FEATURED PRODUCTS / PRODUCT CARDS
+   ========================================================= */
+.featured-products {
+    padding: 80px 8%;
+}
+
+.featured-products h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    position: relative;
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all .35s ease;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 122, 0, .5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+}
+
+.product img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.product:hover img {
+    transform: scale(1.05);
+}
+
+.product .content {
+    padding: 22px;
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #ff7a00;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+
+.badge.sale {
+    background: #e53935;
+}
+
+/* Rating */
+.rating {
+    color: #ffc107;
+    font-size: .95rem;
+    margin-bottom: 12px;
+}
+
+.rating span {
+    color: #9a9a9a;
+    font-size: .85rem;
+    margin-left: 5px;
+}
+
+/* Heading */
+.product h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+/* Description */
+.product p {
+    font-size: .95rem;
+    color: #b5b5b5;
+    line-height: 1.7;
+    margin: 15px 0 25px;
+}
+
+/* Bottom Section */
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Prices */
+.price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.old-price {
+    color: #7d7d7d;
+    font-size: .9rem;
+    text-decoration: line-through;
+    margin-bottom: 3px;
+}
+
+.price {
+    color: #ff7a00;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+/* Button */
+.product button {
+    background: #ff7a00;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .3s ease;
+}
+
+.product button:hover {
+    background: #ff922e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 122, 0, .35);
+}
+
+.product button:active {
+    transform: scale(.98);
+}
+
+/* =========================================================
+   9. FLASH SALE SECTION
+   ========================================================= */
+.flash-sale {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/* FIX: was ".flas-sale::before" (typo/missing "h"), so the
+   overlay gradient never actually applied to this section */
+.flash-sale::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+.flash-sale img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flash-sale-content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.flash-sale-content h1,
+.flash-sale-content h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.flash-sale-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* =========================================================
+   10. WHY CHOOSE / SPECIALITIES
+   ========================================================= */
+.why-choose {
+    margin-top: 50px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.specialities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.speciality {
+    background: #161616;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* =========================================================
+   11. CUSTOMER REVIEWS / TESTIMONIALS
+   ========================================================= */
+.testimonials {
+    text-align: center;
+    padding: 50px;
+}
+
+.customer-reviews {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* FIX: removed a duplicate "justify-content: center;" declaration
+       that was listed twice in the original rule */
+}
+
+.customer {
+    background-color: #333;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+/* =========================================================
+   12. NEWSLETTER
+   ========================================================= */
+.newsletter {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.newsletter h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.newsletter form {
+    max-width: 650px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #161616;
+    padding: 40px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+}
+
+.newsletter label {
+    text-align: left;
+    color: #d1d1d1;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 8px;
+    background: #0f0f0f;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: .3s;
+}
+
+.newsletter input[type="text"]:focus,
+.newsletter input[type="email"]:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 12px rgba(255, 122, 0, .25);
+}
+
+.newsletter input::placeholder {
+    color: #888888;
+}
+
+.newsletter input[type="submit"] {
+    margin-top: 10px;
+    padding: 15px;
+    background: #ff7a00;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.newsletter input[type="submit"]:hover {
+    background: #ff922e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 122, 0, .35);
+}
+
+.newsletter input[type="submit"]:active {
+    transform: scale(.98);
+}
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+.footer {
+    background: #111111;
+    color: #b8b8b8;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 70px 8%;
+}
+.footer-box h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.footer-box h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.footer-box p {
+    line-height: 1.8;
+    color: #999;
+}
+.footer-box a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: 0.3s ease;
+}
+.footer-box a:hover {
+    color: #ff7a00;
+    padding-left: 8px;
+}
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1b1b1b;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 0;
+}
+.social-icons a:hover {
+    background: #ff7a00;
+    transform: translateY(-4px);
+}
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 8%;
+    text-align: center;
+}
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+/* =========================================================
+   14. BACK TO TOP BUTTON
+========================================================= */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff7a00;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.4rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+.back-to-top:hover {
+    background: #ff922e;
+    transform: translateY(-5px);
+}
+
+/* =========================================================
+   15. RESPONSIVE DESIGN (1200px -> 576px)
+   ========================================================= */
+/* ---------- Large Laptops (1200px) ---------- */
+@media (max-width:1200px) {
+    .navbar {
+        padding: 0 30px;
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.3rem;
+    }
+
+    .ctg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specialities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* FIX: was ".reviews" (no such class exists); the actual
+       reviews grid is ".customer-reviews" */
+    .customer-reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- Tablets (992px) ---------- */
+@media (max-width:992px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search form {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .register-btn {
+        justify-content: center;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content {
+        left: 6%;
+        max-width: 450px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .ctg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specialities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .customer-reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- Mobile (768px) ---------- */
+@media (max-width:768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content {
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: .95rem;
+    }
+
+    .btn {
+        padding: 12px 28px;
+    }
+
+    .categories h1,
+    .featured-products h1,
+    .why-choose h1,
+    .testimonials h1,
+    .newsletter h1 {
+        font-size: 2rem;
+    }
+
+    .ctg {
+        grid-template-columns: 1fr;
+    }
+
+    .category img {
+        height: 350px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .specialities {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter form {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+
+    .footer-twotier__top-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .footer-twotier__bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-twotier__heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-twotier__brand {
+        text-align: center;
+    }
+
+    .footer-twotier__brand p {
+        margin-inline: auto;
+    }
+
+    .footer-twotier__links {
+        text-align: center;
+    }
+}
+
+/* ---------- Small Phones (576px) ---------- */
+@media (max-width:576px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .register-btn {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-login,
+    .btn-signup {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        height: 55vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: .9rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .category img {
+        height: 280px;
+    }
+
+    .category h1 {
+        font-size: 1.7rem;
+    }
+
+    .product img {
+        height: 220px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .product button {
+        width: 100%;
+    }
+}

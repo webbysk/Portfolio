@@ -1,0 +1,654 @@
+/* =========================================================
+   TABLE OF CONTENTS
+   1. Global Reset
+   2. Utilities
+   3. Navbar
+   4. Search Bar
+   5. Auth Buttons
+   6. Shop Header
+   7. Filters
+   8. Categories
+========================================================= */
+/* =========================================================
+   1. GLOBAL RESET
+========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+.page {
+    width: 100%;
+}
+/* =========================================================
+   2. UTILITIES
+========================================================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* =========================================================
+   3. NAVBAR
+========================================================= */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 18px 8%;
+    background: #0b0b0b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.logo h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.nav-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 8px 0;
+    transition: 0.3s ease;
+}
+.nav-links a:hover {
+    color: #ffffff;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff7a00;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+/* =========================================================
+   4. SEARCH BAR
+========================================================= */
+.search form {
+    display: flex;
+    width: 280px;
+}
+.search input {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #161616;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.search input::placeholder {
+    color: #888;
+}
+.search input:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.25);
+}
+/* =========================================================
+   5. AUTH BUTTONS
+========================================================= */
+.register-btn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.register-btn a {
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.btn-login {
+    color: #aaaaaa;
+}
+.btn-login:hover {
+    color: white;
+}
+.btn-signup {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.btn-signup:hover {
+    background: #ff7a00;
+    color: white;
+}
+/* =========================================================
+   6. SHOP HEADER
+========================================================= */
+.shop-header {
+    text-align: center;
+    padding: 80px 8% 50px;
+}
+.shop-header h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+.shop-header p {
+    color: #b5b5b5;
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+/* =========================================================
+   7. FILTER SECTION
+========================================================= */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 8%;
+    margin-bottom: 50px;
+    background: #111111;
+}
+.filter-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.filter-box label {
+    color: #cccccc;
+    font-size: 14px;
+}
+.filter-box select {
+    width: 200px;
+    padding: 12px 15px;
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+.filter-box select:focus {
+    border-color: #ff7a00;
+}
+/* =========================================================
+   8. CATEGORIES
+========================================================= */
+.categories {
+    padding: 60px 8%;
+    text-align: center;
+}
+.categories h2 {
+    font-size: 2.6rem;
+    margin-bottom: 45px;
+}
+.ctg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.category {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.category img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+.category::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+.category h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ff7a00;
+}
+.category:hover img {
+    transform: scale(1.08);
+}
+.category:hover::after {
+    background: rgba(0, 0, 0, 0.25);
+}
+/* =========================================================
+   9. PRODUCTS SECTION
+========================================================= */
+.products {
+    padding: 80px 8%;
+}
+.products>h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+}
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+.product {
+    position: relative;
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+.product:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 122, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+/* Product Image */
+.product img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+.product:hover img {
+    transform: scale(1.05);
+}
+/* Product Content */
+.product .content {
+    padding: 22px;
+}
+/* Badge */
+.badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #ff7a00;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+.badge.sale {
+    background: #e53935;
+}
+/* Rating */
+.rating {
+    color: #ffc107;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+.rating span {
+    color: #999999;
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+/* Product Title */
+.product h3 {
+    font-size: 1.45rem;
+    margin: 0;
+    color: white;
+    font-weight: 700;
+}
+/* Product Description */
+.product p {
+    color: #b5b5b5;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 15px 0 25px;
+}
+/* Bottom Row */
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+/* Price */
+.price {
+    color: #ff7a00;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+/* Add To Cart Button */
+.product button {
+    background: #ff7a00;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.product button:hover {
+    background: #ff922e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 122, 0, 0.35);
+}
+.product button:active {
+    transform: scale(0.97);
+}
+/* =========================================================
+   PRODUCT EMPTY / FUTURE STATES
+========================================================= */
+.no-products {
+    text-align: center;
+    color: #aaa;
+    font-size: 1.1rem;
+    padding: 50px;
+}
+/* =========================================================
+   10. PAGINATION
+========================================================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 60px 8%;
+}
+.pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45px;
+    height: 45px;
+    padding: 0 18px;
+    background: #161616;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+}
+.pagination a:hover,
+.pagination .active {
+    background: #ff7a00;
+    border-color: #ff7a00;
+}
+.pagination i {
+    margin-left: 8px;
+}
+/* =========================================================
+   11. FOOTER
+========================================================= */
+.footer {
+    background: #111111;
+    color: #b8b8b8;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 70px 8%;
+}
+.footer-box h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.footer-box h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.footer-box p {
+    line-height: 1.8;
+    color: #999;
+}
+.footer-box a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: 0.3s ease;
+}
+.footer-box a:hover {
+    color: #ff7a00;
+    padding-left: 8px;
+}
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1b1b1b;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 0;
+}
+.social-icons a:hover {
+    background: #ff7a00;
+    transform: translateY(-4px);
+}
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 8%;
+    text-align: center;
+}
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+/* =========================================================
+   12. BACK TO TOP BUTTON
+========================================================= */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff7a00;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.4rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+.back-to-top:hover {
+    background: #ff922e;
+    transform: translateY(-5px);
+}
+/* =========================================================
+   13. RESPONSIVE DESIGN
+========================================================= */
+/* ===============================
+   LARGE DEVICES - 1200px
+================================ */
+@media(max-width:1200px) {
+    .navbar {
+        padding: 18px 4%;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+/* ===============================
+   TABLETS - 992px
+================================ */
+@media(max-width:992px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .search form {
+        width: 80%;
+    }
+    .filters {
+        flex-wrap: wrap;
+    }
+    .ctg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* ===============================
+   MOBILE - 768px
+================================ */
+@media(max-width:768px) {
+    .shop-header h1 {
+        font-size: 2.3rem;
+    }
+    .filters {
+        flex-direction: column;
+    }
+    .filter-box {
+        width: 100%;
+    }
+    .filter-box select {
+        width: 100%;
+    }
+    .ctg {
+        grid-template-columns: 1fr;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .product button {
+        width: 100%;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-box a:hover {
+        padding-left: 0;
+    }
+}
+/* ===============================
+   SMALL PHONES - 576px
+================================ */
+@media(max-width:576px) {
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+    .nav-links a {
+        font-size: 13px;
+        padding: 5px;
+    }
+    .register-btn {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-login,
+    .btn-signup {
+        width: 100%;
+        text-align: center;
+    }
+    .shop-header {
+        padding: 50px 5%;
+    }
+    .shop-header h1 {
+        font-size: 2rem;
+    }
+    .products,
+    .categories {
+        padding: 50px 5%;
+    }
+    .product img {
+        height: 230px;
+    }
+    .pagination {
+        flex-wrap: wrap;
+    }
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        right: 20px;
+        bottom: 20px;
+    }
+}

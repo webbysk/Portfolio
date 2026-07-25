@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPRIX | Products</title>
+    <link rel="stylesheet" href="./products.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+        <!-- ===================== NAVBAR ===================== -->
+        <header class="navbar">
+            <div class="logo">
+                <h1>
+                    SHOPRIX
+                </h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">
+                    Home
+                </a>
+                <a href="products.html">
+                    Shop
+                </a>
+                <a href="#">
+                    Deals
+                </a>
+                <a href="#">
+                    Categories
+                </a>
+                <a href="about.html">
+                    About
+                </a>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </nav>
+            <div class="search">
+                <form>
+                    <label for="product-search" class="sr-only">
+                        Search Products
+                    </label>
+                    <input type="search" id="product-search" placeholder="Search products...">
+                </form>
+            </div>
+            <div class="register-btn">
+                <a href="login.html" class="btn-login">
+                    Login
+                </a>
+                <a href="signup.html" class="btn-signup">
+                    Sign Up
+                </a>
+            </div>
+        </header>
+        <!-- ===================== SHOP HEADER ===================== -->
+        <section class="shop-header">
+            <h1>
+                All Products
+            </h1>
+            <p>
+                Explore our latest collection of premium products
+                at affordable prices.
+            </p>
+        </section>
+        <!-- ===================== FILTER SECTION ===================== -->
+        <section class="filters">
+            <div class="filter-box">
+                <label for="category">
+                    Category
+                </label>
+                <select id="category">
+                    <option>
+                        All Categories
+                    </option>
+                    <option>
+                        Fashion
+                    </option>
+                    <option>
+                        Shoes
+                    </option>
+                    <option>
+                        Electronics
+                    </option>
+                    <option>
+                        Accessories
+                    </option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <label for="price">
+                    Price Range
+                </label>
+                <select id="price">
+                    <option>
+                        All Prices
+                    </option>
+                    <option>
+                        Under $50
+                    </option>
+                    <option>
+                        $50 - $100
+                    </option>
+                    <option>
+                        Above $100
+                    </option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <label for="sort">
+                    Sort By
+                </label>
+                <select id="sort">
+                    <option>
+                        Latest
+                    </option>
+                    <option>
+                        Price Low To High
+                    </option>
+                    <option>
+                        Price High To Low
+                    </option>
+                    <option>
+                        Most Popular
+                    </option>
+                </select>
+            </div>
+        </section>
+        <!-- ===================== PRODUCT CATEGORIES ===================== -->
+        <section class="categories">
+            <h2>
+                Browse Categories
+            </h2>
+            <div class="ctg">
+                <div class="category">
+                    <img src="./images/fashion-category-img.png" alt="Fashion">
+                    <h3>
+                        Fashion
+                    </h3>
+                </div>
+                <div class="category">
+                    <img src="./images/shoes-category-img.png" alt="Shoes">
+                    <h3>
+                        Shoes
+                    </h3>
+                </div>
+                <div class="category">
+                    <img src="./images/watches-category-img.png" alt="Watches">
+                    <h3>
+                        Watches
+                    </h3>
+                </div>
+                <div class="category">
+                    <img src="./images/electronics-category-img.png" alt="Electronics">
+                    <h3>
+                        Electronics
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== PRODUCTS GRID ===================== -->
+        <section class="products">
+            <h2>
+                Latest Products
+            </h2>
+            <div class="product-grid">
+                <!-- PRODUCT 1 -->
+                <div class="product">
+                    <span class="badge">
+                        NEW
+                    </span>
+                    <img src="./images/running-shoes.jfif" alt="Running Shoes">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(124)</span>
+                        </div>
+                        <h3>
+                            Running Shoes
+                        </h3>
+                        <p>
+                            Lightweight sports shoes designed for
+                            comfort, style and everyday performance.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $89.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 2 -->
+                <div class="product">
+                    <span class="badge sale">
+                        -20%
+                    </span>
+                    <img src="./images/leather-backpack.png" alt="Leather Backpack">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(92)</span>
+                        </div>
+                        <h3>
+                            Leather Backpack
+                        </h3>
+                        <p>
+                            Premium backpack with multiple compartments
+                            perfect for work and travel.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $69.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 3 -->
+                <div class="product">
+                    <span class="badge">
+                        BEST
+                    </span>
+                    <img src="./images/smart-watch.png" alt="Smart Watch">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(281)</span>
+                        </div>
+                        <h3>
+                            Smart Watch
+                        </h3>
+                        <p>
+                            Track fitness, receive notifications and
+                            manage your daily activities.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $149.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 4 -->
+                <div class="product">
+                    <img src="./images/wireless-headphones.webp" alt="Wireless Headphones">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐
+                            <span>(86)</span>
+                        </div>
+                        <h3>
+                            Wireless Headphones
+                        </h3>
+                        <p>
+                            Premium sound quality with comfortable
+                            design and long battery life.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $59.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 5 -->
+                <div class="product">
+                    <span class="badge sale">
+                        SALE
+                    </span>
+                    <img src="./images/premium-tshirt.jfif" alt="Premium T Shirt">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(150)</span>
+                        </div>
+                        <h3>
+                            Premium T-Shirt
+                        </h3>
+                        <p>
+                            Soft cotton fabric with a modern
+                            comfortable fit.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $24.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 6 -->
+                <div class="product">
+                    <img src="./images/sunglasses.webp" alt="Classic Sunglasses">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐
+                            <span>(74)</span>
+                        </div>
+                        <h3>
+                            Classic Sunglasses
+                        </h3>
+                        <p>
+                            Stylish sunglasses with UV protection
+                            for daily outdoor use.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $39.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 7 -->
+                <div class="product">
+                    <span class="badge">
+                        HOT
+                    </span>
+                    <img src="./images/mechanical-keyboard.jfif" alt="Mechanical Keyboard">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(210)</span>
+                        </div>
+                        <h3>
+                            Mechanical Keyboard
+                        </h3>
+                        <p>
+                            Fast responsive keyboard built for
+                            gaming and productivity.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $79.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 8 -->
+                <div class="product">
+                    <img src="./images/winter-hoodie.webp" alt="Winter Hoodie">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                            <span>(98)</span>
+                        </div>
+                        <h3>
+                            Winter Hoodie
+                        </h3>
+                        <p>
+                            Warm premium hoodie designed for
+                            comfort during cold weather.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $44.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCT 9 -->
+                <div class="product">
+                    <span class="badge">
+                        NEW
+                    </span>
+                    <img src="./images/digital-camera.png" alt="Digital Camera">
+                    <div class="content">
+                        <div class="rating">
+                            ⭐⭐⭐⭐
+                            <span>(65)</span>
+                        </div>
+                        <h3>
+                            Digital Camera
+                        </h3>
+                        <p>
+                            Capture high-quality photos and videos
+                            with professional results.
+                        </p>
+                        <div class="bottom">
+                            <span class="price">
+                                $299.99
+                            </span>
+                            <button type="button">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================== PAGINATION ===================== -->
+        <section class="pagination">
+            <a href="#" class="active">
+                1
+            </a>
+            <a href="#">
+                2
+            </a>
+            <a href="#">
+                3
+            </a>
+            <a href="#">
+                Next
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </section>
+        <!-- ===================== FOOTER ===================== -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Brand -->
+                <div class="footer-box">
+                    <h2>
+                        SHOPRIX
+                    </h2>
+                    <p>
+                        Your trusted online shopping destination.
+                        We provide premium products, affordable prices,
+                        secure payments and fast delivery.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-box">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="index.html">
+                        Home
+                    </a>
+                    <a href="products.html">
+                        Shop
+                    </a>
+                    <a href="#">
+                        Deals
+                    </a>
+                    <a href="#">
+                        Categories
+                    </a>
+                    <a href="about.html">
+                        About
+                    </a>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </div>
+                <!-- Customer Support -->
+                <div class="footer-box">
+                    <h3>
+                        Customer Support
+                    </h3>
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+                    <a href="#">
+                        Return Policy
+                    </a>
+                    <a href="#">
+                        Shipping Information
+                    </a>
+                    <a href="#">
+                        FAQs
+                    </a>
+                </div>
+                <!-- Contact -->
+                <div class="footer-box">
+                    <h3>
+                        Contact Us
+                    </h3>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Rawalpindi, Pakistan
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        +92 300 123456789
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        support@shoprix.com
+                    </p>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>
+                    © 2026 SHOPRIX Store. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+        <!-- ===================== BACK TO TOP ===================== -->
+        <a href="#" class="back-to-top" aria-label="Back To Top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </div>
+</body>
+
+</html>
