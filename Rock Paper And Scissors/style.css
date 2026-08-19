@@ -1,0 +1,226 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    text-align: center;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.banner {
+    background: #111827;
+    border-bottom: 1px solid #1e293b;
+    padding: 1.5rem 1rem;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================
+   CHOICES
+========================= */
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 5vw, 3rem);
+    margin: clamp(2.5rem, 8vw, 5rem) auto 0;
+    padding: 0 1rem;
+}
+
+.choice {
+    width: clamp(100px, 22vw, 165px);
+    height: clamp(100px, 22vw, 165px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: #1e293b;
+
+    cursor: pointer;
+
+    border: 3px solid transparent;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.choice:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: #263449;
+    border-color: #38bdf8;
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.18);
+}
+
+.choice:active {
+    transform: scale(0.96);
+}
+
+.choice img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   SCOREBOARD
+========================= */
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3rem, 12vw, 7rem);
+
+    margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.score {
+    min-width: 100px;
+}
+
+.score p:last-child {
+    margin-top: 0.25rem;
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#user-score,
+#comp-score {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.msg-container {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding: 0 1rem;
+}
+
+#msg {
+    display: inline-block;
+
+    background: #1e293b;
+    color: #f8fafc;
+
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    font-weight: 600;
+
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+
+    max-width: 90%;
+
+    border: 1px solid #334155;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 700px) {
+
+    .choices {
+        gap: 1rem;
+    }
+
+    .choice {
+        border-width: 2px;
+    }
+
+    .scoreboard {
+        gap: 3rem;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .banner {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .choices {
+        gap: 0.7rem;
+        margin-top: 2.5rem;
+    }
+
+    .choice {
+        width: 90px;
+        height: 90px;
+    }
+
+    .scoreboard {
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+    }
+
+    #msg {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+========================= */
+
+@media (max-width: 350px) {
+
+    .choices {
+        gap: 0.4rem;
+    }
+
+    .choice {
+        width: 75px;
+        height: 75px;
+    }
+
+    .scoreboard {
+        gap: 1.5rem;
+    }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Play a simple and interactive Tic Tac Toe game. Challenge a friend and get three in a row to win!"
+    />
+
+    <meta name="theme-color" content="#1d3f4b" />
+
+    <title>Tic Tac Toe - Play Online</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         RESULT SCREEN
+    ========================== -->
+
+    <div class="msg-container hide">
+      <div class="result-card">
+        <div class="result-icon">🏆</div>
+
+        <p id="message"></p>
+
+        <p class="result-subtitle">Great game! Ready for another round?</p>
+
+        <button class="new-btn">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- =========================
+         MAIN GAME
+    ========================== -->
+
+    <main>
+      <h1>Tic Tac Toe</h1>
+
+      <p class="subtitle">Get three in a row to win!</p>
+
+      <!-- GAME BOARD -->
+
+      <div class="container">
+        <div class="game">
+          <button class="box" aria-label="Box 1"></button>
+          <button class="box" aria-label="Box 2"></button>
+          <button class="box" aria-label="Box 3"></button>
+
+          <button class="box" aria-label="Box 4"></button>
+          <button class="box" aria-label="Box 5"></button>
+          <button class="box" aria-label="Box 6"></button>
+
+          <button class="box" aria-label="Box 7"></button>
+          <button class="box" aria-label="Box 8"></button>
+          <button class="box" aria-label="Box 9"></button>
+        </div>
+      </div>
+
+      <!-- RESET BUTTON -->
+
+      <button class="reset-btn">RESET GAME</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

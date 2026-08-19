@@ -1,0 +1,463 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #6fc5c7 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #365c8d 0%,
+            transparent 40%
+        ),
+        #1d3f4b;
+
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(92vw, 520px);
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    font-size: clamp(2.2rem, 8vw, 4rem);
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+    margin-top: 8px;
+
+    font-size: 15px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   GAME CONTAINER
+========================= */
+
+.container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 30px 0;
+}
+
+
+/* =========================
+   GAME BOARD
+========================= */
+
+.game {
+    width: min(82vw, 420px);
+
+    aspect-ratio: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding: 14px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================
+   GAME BOX
+========================= */
+
+.box {
+    width: 100%;
+
+    aspect-ratio: 1;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+
+    font-weight: 800;
+
+    color: #b0413e;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+/* Hover */
+
+.box:hover:not(:disabled) {
+    transform: translateY(-4px) scale(1.02);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 22px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Click */
+
+.box:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+
+/* Disabled boxes */
+
+.box:disabled {
+    cursor: not-allowed;
+}
+
+
+/* Keyboard accessibility */
+
+.box:focus-visible,
+.reset-btn:focus-visible,
+.new-btn:focus-visible {
+    outline: 3px solid #ffffff;
+
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.reset-btn,
+.new-btn {
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 13px 25px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Button hover */
+
+.reset-btn:hover,
+.new-btn:hover {
+    transform: translateY(-3px);
+
+    background: #000000;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Button click */
+
+.reset-btn:active,
+.new-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   RESULT OVERLAY
+========================= */
+
+.msg-container {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background: rgba(10, 25, 32, 0.7);
+
+    backdrop-filter: blur(12px);
+
+    animation: fadeIn 0.3s ease;
+}
+
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+    width: min(90vw, 420px);
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(20px);
+
+    animation: popIn 0.4s ease;
+}
+
+
+/* Trophy */
+
+.result-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    animation: bounce 1s ease infinite;
+}
+
+
+/* Result text */
+
+#message {
+    color: #ffffff;
+
+    font-size: clamp(2rem, 8vw, 3.5rem);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Result subtitle */
+
+.result-subtitle {
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* Play Again */
+
+.new-btn {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hide {
+    display: none;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes popIn {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 20px 10px;
+    }
+
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+
+    .game {
+        width: 90vw;
+
+        gap: 8px;
+
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+
+    .box {
+        border-radius: 12px;
+    }
+
+
+    .reset-btn {
+        width: 90%;
+
+        max-width: 300px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
